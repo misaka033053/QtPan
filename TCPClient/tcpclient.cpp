@@ -2,6 +2,8 @@
 #include "ui_tcpclient.h"
 #include <QMessageBox>
 #include <QDebug>
+#include "protocol.h"
+
 
 TCPClient::TCPClient(QWidget *parent) :
     QWidget(parent),

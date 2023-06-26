@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2023-06-26T10:08:30
+# Project created by QtCreator 2023-06-26T16:00:29
 #
 #-------------------------------------------------
 
@@ -8,17 +8,18 @@ QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = TCPClient
+TARGET = TCPServer
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        tcpclient.cpp
+        widget.cpp \
+    tcpserver.cpp \
+    tcpsocket.cpp
 
-HEADERS  += tcpclient.h
+HEADERS  += widget.h \
+    tcpserver.h \
+    tcpsocket.h
 
-FORMS    += tcpclient.ui
-
-RESOURCES += \
-    config.qrc
+FORMS    += widget.ui
 INCLUDEPATH += ../QtPanCommon
