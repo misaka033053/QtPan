@@ -24,6 +24,13 @@ public:
 public slots:
     void showConnectStatus();
 
+private slots:
+    void on_login_clicked();
+
+    void on_registe_clicked();
+
+    void on_logout_clicked();
+
 private:
     Ui::TCPClient *ui;
     QString m_strIP;

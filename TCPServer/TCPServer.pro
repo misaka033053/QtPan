@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network
+QT       += core gui network sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,13 +13,18 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
+    operdb.cpp \
         widget.cpp \
     tcpserver.cpp \
     tcpsocket.cpp
 
 HEADERS  += widget.h \
+    operdb.h \
     tcpserver.h \
     tcpsocket.h
 
 FORMS    += widget.ui
 INCLUDEPATH += ../QtPanCommon
+
+RESOURCES += \
+    config.qrc

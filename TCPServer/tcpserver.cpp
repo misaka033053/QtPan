@@ -19,7 +19,7 @@ void TCPServer::loadConfig()
     port = 8888;
 }
 
-void TCPServer::incomingConnection()
+void TCPServer::incomingConnection(qintptr handle)
 {
     qDebug()<<"new client connected";
 }

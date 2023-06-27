@@ -12,7 +12,7 @@ private:
     QString ip;
     int port;
     void loadConfig();
-    void incomingConnection();
+    void incomingConnection(qintptr handle);
 };
 
 #endif // TCPSERVER_H

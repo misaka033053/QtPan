@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/db">
+        <file alias="serverDB">cloud.db</file>
+    </qresource>
+</RCC>

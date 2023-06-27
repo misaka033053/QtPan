@@ -21,4 +21,5 @@ FORMS    += tcpclient.ui
 
 RESOURCES += \
     config.qrc
-INCLUDEPATH += ../QtPanCommon
+INCLUDEPATH += E:\EssentialC++\QtPan\QtPanCommon
+#LIBS += -L../QtPanCommon -lprotocol
