@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include<qtpancommon_global.h>
 
 typedef unsigned int uint;
 
@@ -22,6 +23,12 @@ struct PDU{
     int caMsg[];//实际消息
 };
 
-PDU *mkPDU(uint uiMsgLen);
+
+class QTPANCOMMONSHARED_EXPORT panProtocol{
+
+public:
+    PDU *mkPDU(uint uiMsgLen);
+
+};
 
 #endif // PROTOCOL

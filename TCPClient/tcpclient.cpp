@@ -2,7 +2,7 @@
 #include "ui_tcpclient.h"
 #include <QMessageBox>
 #include <QDebug>
-#include "qtpancommon.h"
+#include "protocol.h"
 
 
 
@@ -65,7 +65,9 @@ void TCPClient::on_registe_clicked()
     QString name = ui->name->text();
     QString pwd  = ui->name->text();
     if(!name.isEmpty()&&!pwd.isEmpty()){
-        PDU *pdu = mkPDU(0);
+        panProtocol p;
+        PDU *pdu = p.mkPDU(0);
+        qDebug()<<"create success";
         pdu->uiMshType = ENUM_MSG_TYPE_REGIST_REQUEST;
         strncpy(pdu->caData,name.toStdString().c_str(),32);
         strncpy(pdu->caData+32,pwd.toStdString().c_str(),32);
@@ -73,6 +75,7 @@ void TCPClient::on_registe_clicked()
         free(pdu);
         pdu = NULL;
     }
+
 }
 
 

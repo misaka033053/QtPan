@@ -21,5 +21,10 @@ FORMS    += tcpclient.ui
 
 RESOURCES += \
     config.qrc
-INCLUDEPATH += E:\EssentialC++\QtPan\QtPanCommon
-#LIBS += -L../QtPanCommon -lprotocol
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../QtPanCommon/release/ -lQtPanCommon
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../QtPanCommon/debug/ -lQtPanCommon
+else:unix: LIBS += -L$$OUT_PWD/../QtPanCommon/ -lQtPanCommon
+
+INCLUDEPATH += $$PWD/../QtPanCommon
+DEPENDPATH += $$PWD/../QtPanCommon

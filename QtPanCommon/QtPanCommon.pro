@@ -11,10 +11,10 @@ TEMPLATE = lib
 
 DEFINES += QTPANCOMMON_LIBRARY
 
-SOURCES += qtpancommon.cpp \
+SOURCES += \
     protocol.cpp
 
-HEADERS += qtpancommon.h\
+HEADERS +=\
         qtpancommon_global.h \
     protocol.h
 
