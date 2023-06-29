@@ -27,7 +27,7 @@ struct PDU{
 class QTPANCOMMONSHARED_EXPORT panProtocol{
 
 public:
-    PDU *mkPDU(uint uiMsgLen);
+    static PDU *mkPDU(uint uiMsgLen);
 
 };
 

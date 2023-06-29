@@ -1,6 +1,7 @@
 #ifndef TCPSERVER_H
 #define TCPSERVER_H
 #include <QTcpServer>
+#include "tcpsocket.h"
 
 class TCPServer : public QTcpServer
 {
@@ -9,10 +10,9 @@ public:
     TCPServer();
     static TCPServer &getInstance();
 private:
-    QString ip;
-    int port;
-    void loadConfig();
     void incomingConnection(qintptr handle);
+
+    QList<TCPSocket*> m_tcpSocketList;
 };
 
 #endif // TCPSERVER_H

@@ -3,8 +3,7 @@
 #include <QDebug>
 TCPServer::TCPServer()
 {
-    loadConfig();
-    getInstance().listen(QHostAddress(ip),port);
+
 }
 
 TCPServer &TCPServer::getInstance()
@@ -13,14 +12,12 @@ TCPServer &TCPServer::getInstance()
     return instance;
 }
 
-void TCPServer::loadConfig()
-{
-    ip = "127.0.0.1";
-    port = 8888;
-}
 
 void TCPServer::incomingConnection(qintptr handle)
 {
     qDebug()<<"new client connected";
+    TCPSocket* pTcpSocket = new TCPSocket;
+    pTcpSocket->setSocketDescriptor(handle);
+    m_tcpSocketList.append(pTcpSocket);
 }
 

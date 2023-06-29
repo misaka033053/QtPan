@@ -30,9 +30,12 @@ void TCPClient::loadConfig()
     if(file.open(QIODevice::ReadOnly)){
         QByteArray data = file.readAll();
         QString strdata = data.toStdString().c_str();
+
         file.close();
-        strdata.replace("/r/n"," ");
-        QStringList strList = strdata.split("");
+        strdata.replace("\r\n"," ");
+        qDebug()<<strdata;
+        QStringList strList = strdata.split(" ");
+        qDebug()<<strList.size();
         if(strList.size()>=2){
             m_strIP = strList.at(0);
             m_usPort = strList.at(1).toInt();
@@ -63,7 +66,7 @@ void TCPClient::on_login_clicked()
 void TCPClient::on_registe_clicked()
 {
     QString name = ui->name->text();
-    QString pwd  = ui->name->text();
+    QString pwd  = ui->pwd->text();
     if(!name.isEmpty()&&!pwd.isEmpty()){
         panProtocol p;
         PDU *pdu = p.mkPDU(0);

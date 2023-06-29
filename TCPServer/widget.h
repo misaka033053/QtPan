@@ -2,6 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QHostAddress>
 
 namespace Ui {
 class Widget;
@@ -17,6 +18,9 @@ public:
 
 private:
     Ui::Widget *ui;
+    QString ip;
+    int port;
+    void loadConfig();
 };
 
 #endif // WIDGET_H
